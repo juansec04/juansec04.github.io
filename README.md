@@ -1,3 +1,3 @@
 # juansec04.github.io
 
-I am editing the desktop file as a test
+I am Juan Ramirez and this is my ITIS 3135 GitHub Pages!
