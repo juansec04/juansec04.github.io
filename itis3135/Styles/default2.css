@@ -1,0 +1,8 @@
+p {
+    color: green;
+}
+
+#title,
+.subheading {
+    color: rgb(48, 50, 48)
+}
