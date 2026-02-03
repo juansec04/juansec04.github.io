@@ -1,0 +1,35 @@
+
+body {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color:beige;
+}
+header {
+    background-color: #f4f9f5a2;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}  
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+h1 {
+    text-align: center;
+    color: green;
+    width: fit-content;
+    margin: auto;
+    border-radius: 8px;
+    padding: 10px;
+    border: 3px solid darkseagreen;
+
+}
+a {
+    color: darkgreen;
+}
+p {
+    text-align: center;
+}
