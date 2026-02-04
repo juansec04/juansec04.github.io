@@ -67,3 +67,6 @@ footer {
 a {
     color: white;
 }
+.italic{
+    font-style: italic;
+}
