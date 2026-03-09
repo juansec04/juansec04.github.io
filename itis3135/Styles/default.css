@@ -95,3 +95,17 @@ footer {
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
