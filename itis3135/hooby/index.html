@@ -72,7 +72,7 @@
       border-radius: 12px;
     }
 
-    section.active {
+    .active {
       display: block;
     }
 
@@ -190,8 +190,8 @@
       <figure>
         <img src="images/soccer-home.jpg" alt="Soccer ball on a field">
         <figcaption>Soccer as an exciting hobby</figcaption>
-        <p>This image matches the main idea of the hobby page.</p>
       </figure>
+      <p><em>This image matches the main idea of the hobby page.</em></p>
     </section>
 
     <section id="who">
@@ -209,8 +209,8 @@
       <figure>
         <img src="images/soccer-team.jpg" alt="Soccer team standing together">
         <figcaption>Soccer is built around teamwork</figcaption>
-        <p>This image fits the section by showing players together.</p>
       </figure>
+      <p><em>This image fits the section by showing players together.</em></p>
     </section>
 
     <section id="when">
@@ -239,10 +239,10 @@
       </table>
 
       <figure>
-        <img src="images/soccer-schedule.jpg" alt="Soccer practice at sunset" width="350px">
+        <img src="images/soccer-schedule.jpg" alt="Soccer practice at sunset" width="350">
         <figcaption>Practice sessions at the best times</figcaption>
-        <p>This image represents a good time to train and play.</p>
       </figure>
+      <p><em>This image represents a good time to train and play.</em></p>
     </section>
 
     <section id="where">
@@ -258,10 +258,10 @@
       </div>
 
       <figure>
-        <img src="images/soccer-location.jpg" alt="Outdoor soccer field" width="400px">
+        <img src="images/soccer-location.jpg" alt="Outdoor soccer field" width="400">
         <figcaption>A great place to play soccer</figcaption>
-        <p>This image matches the section by showing a soccer field.</p>
       </figure>
+      <p><em>This image matches the section by showing a soccer field.</em></p>
     </section>
 
     <section id="how">
@@ -279,8 +279,8 @@
       <figure>
         <img src="images/soccer-how.jpg" alt="Player practicing soccer drills">
         <figcaption>Practicing the basics</figcaption>
-        <p>This image shows the kind of training used to improve.</p>
       </figure>
+      <p><em>This image shows the kind of training used to improve.</em></p>
     </section>
 
     <section id="why">
@@ -298,8 +298,8 @@
       <figure>
         <img src="images/soccer-why.jpg" alt="Soccer player celebrating a goal">
         <figcaption>The energy of the sport</figcaption>
-        <p>This image reflects the excitement that makes soccer enjoyable.</p>
       </figure>
+      <p><em>This image reflects the excitement that makes soccer enjoyable.</em></p>
     </section>
 
     <section id="ai-prompts">
@@ -311,8 +311,8 @@
       <figure>
         <img src="images/soccer-ai.jpg" alt="Soccer image for AI prompts section">
         <figcaption>Soccer themed image</figcaption>
-        <p>This image was included to match the topic and style of the page.</p>
       </figure>
+      <p><em>This image was included to match the topic and style of the page.</em></p>
     </section>
   </main>
 
@@ -327,10 +327,14 @@
 
   <script>
     function showSection(id) {
-      const sections = document.querySelectorAll("main section");
-      sections.forEach(section => section.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+  const sections = document.querySelectorAll("main section");
+
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("active");
+  }
+
+  document.getElementById(id).classList.add("active");
+}
   </script>
 </body>
 </html>
