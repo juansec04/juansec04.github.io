@@ -3,13 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
+    <title>Introduction Form</title>
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5; margin: 0; padding: 0; }
+        main { max-width: 1024px; margin: 1rem auto; padding: 1rem; }
+        form fieldset { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        form legend { font-weight: 700; padding: 0 .4rem; }
+        form label { display: block; margin-top: .75rem; font-size: .95rem; }
+        form input[type="text"], form input[type="url"], form input[type="date"], form textarea { width: 100%; margin-top: .25rem; padding: .5rem; border: 1px solid #aaa; border-radius: 4px; font-size: 1rem; box-sizing: border-box; }
+        form textarea { min-height: 4rem; resize: vertical; }
+        .compact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; align-items: start; }
+        .button-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+        button { cursor: pointer; padding: .5rem 1rem; border-radius: 4px; border: 1px solid #555; background: #f2f2f2; }
+        button:hover { background: #e6e6e6; }
+        #output-area { margin-top: 1rem; border: 1px dashed #999; padding: 1rem; }
+    </style>
 </head>
 <body>
-    <h2>Form</h2>
-    <h3>Please submit the form below</h3>
-    <form>
-        
-    </form>
+    <div data-include="Components/header.html"></div>
+
+    <main>
+        <h2 id="page-title">Introduction Form</h2>
+        <h3>Please submit the form below.</h3>
+
+        <form id="intro-form" novalidate autocomplete="off">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="first-name">First Name (required)</label>
+                <input id="first-name" name="firstName" type="text" required placeholder="Juan" value="Juan" />
+
+                <label for="middle-name">Middle Name / Initial (optional)</label>
+                <input id="middle-name" name="middleName" type="text" placeholder="D" value="D" />
+
+                <label for="preferred-name">Nickname / Preferred Name (optional)</label>
+                <input id="preferred-name" name="preferredName" type="text" placeholder="JR" value="JR" />
+
+                <label for="last-name">Last Name (required)</label>
+                <input id="last-name" name="lastName" type="text" required placeholder="Ramirez" value="Ramirez" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Introduction Details</legend>
+                <div class="compact-row">
+                    <div>
+                        <label for="ack-statement">Acknowledgment Statement (required)</label>
+                        <textarea id="ack-statement" name="ackStatement" required placeholder="I acknowledge this form reflects my own work...">I acknowledge this form reflects my own work and the data is accurate.</textarea>
+                    </div>
+                    <div>
+                        <label for="ack-date">Acknowledgment Date (required)</label>
+                        <input id="ack-date" name="ackDate" type="date" required value="2026-03-23" />
+                    </div>
+                </div>
+
+                <div class="compact-row">
+                    <div>
+                        <label for="mascot-adjective">Mascot Adjective (required)</label>
+                        <input id="mascot-adjective" name="mascotAdjective" type="text" required placeholder="Jazzy" value="Jazzy" />
+                    </div>
+                    <div>
+                        <label for="mascot-animal">Mascot Animal (required)</label>
+                        <input id="mascot-animal" name="mascotAnimal" type="text" required placeholder="Raven" value="Raven" />
+                    </div>
+                </div>
+
+                <label for="mascot-animal">Mascot Animal (required)</label>
+                <input id="mascot-animal" name="mascotAnimal" type="text" required placeholder="Raven" value="Raven" />
+
+                <label for="divider">Divider (required)</label>
+                <input id="divider" name="divider" type="text" required placeholder="~" value="~" />
+
+                <label for="picture">Picture (optional file upload, defaults provided)</label>
+                <input id="picture" name="picture" type="file" accept="image/*" />
+                <img id="picture-preview" src="images/headshot.jpeg" alt="Default headshot" style="max-width:100px;display:block;margin:.5em 0;" />
+
+                <label for="picture-caption">Picture Caption (required)</label>
+                <input id="picture-caption" name="pictureCaption" type="text" required placeholder="My CS profile picture" value="My CS profile picture" />
+
+                <label for="personal-statement">Personal Statement (required)</label>
+                <textarea id="personal-statement" name="personalStatement" required placeholder="I love web development...">I’m a UNC Charlotte CS student building secure full-stack experiences.</textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>7 Main Bullets (required)</legend>
+                <label for="personal-background">Personal Background</label>
+                <textarea id="personal-background" name="personalBackground" required placeholder="Grew up in Charlotte...">Grew up in Charlotte and have a passion for security engineering.</textarea>
+
+                <label for="professional-background">Professional Background</label>
+                <textarea id="professional-background" name="professionalBackground" required placeholder="Worked as a TA/IT assistant...">Worked as an IT support technician and teaching assistant in cybersecurity courses.</textarea>
+
+                <label for="academic-background">Academic Background</label>
+                <textarea id="academic-background" name="academicBackground" required placeholder="Junior CS student...">Junior at UNC Charlotte in Computer Science with Cybersecurity concentration.</textarea>
+
+                <label for="subject-background">Subject Background</label>
+                <textarea id="subject-background" name="subjectBackground" required placeholder="This course helps me...">ITIS provides hands-on practical cybersecurity and infrastructure skills.</textarea>
+
+                <label for="primary-computer">Primary Computer</label>
+                <textarea id="primary-computer" name="primaryComputer" required placeholder="MacBook Pro 14" >MacBook Pro 16" with M2 Max, plus gaming PC with Linux dual-boot.</textarea>
+
+                <label for="funny-thing">Funny Thing (optional)</label>
+                <textarea id="funny-thing" name="funnyThing" placeholder="I once...">I once renamed all my friend’s machine hosts to mythical creatures for April Fool’s.</textarea>
+
+                <label for="share-something">Something I would like to share (optional)</label>
+                <textarea id="share-something" name="shareSomething" placeholder="I’d like to share...">I enjoy mountain biking, sketching, and learning Japanese.</textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Courses (start with one; add more)</legend>
+                <div id="courses-wrapper"></div>
+                <button type="button" id="add-course">Add Course</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quote and Links</legend>
+                <label for="quote">Quote (required)</label>
+                <textarea id="quote" name="quote" required placeholder="The only way to do great work...">The only way to do great work is to love what you do.</textarea>
+
+                <label for="quote-author">Quote author (required)</label>
+                <input id="quote-author" name="quoteAuthor" type="text" required placeholder="Steve Jobs" value="Steve Jobs" />
+
+                <label for="link1">Link 1 (required)</label>
+                <input id="link1" name="link1" type="url" required placeholder="https://www.linkedin.com/..." value="https://www.linkedin.com/in/juan-ramirez-982ba7385/" />
+
+                <label for="link2">Link 2 (required)</label>
+                <input id="link2" name="link2" type="url" required placeholder="https://github.com/..." value="https://github.com/juansec04" />
+
+                <label for="link3">Link 3 (required)</label>
+                <input id="link3" name="link3" type="url" required placeholder="https://github.com/" value="https://github.com/" />
+
+                <label for="link4">Link 4 (required)</label>
+                <input id="link4" name="link4" type="url" required placeholder="https://..." value="https://www.freecodecamp.org/juansec04" />
+
+                <label for="link5">Link 5 (required)</label>
+                <input id="link5" name="link5" type="url" required placeholder="https://webpages.charlotte.edu/jramir62/" value="https://webpages.charlotte.edu/jramir62/" />
+            </fieldset>
+
+            <div class="button-row">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button" id="clear-btn">Clear</button>
+                <button type="button" id="generate-html-btn">Generate HTML</button>
+                <button type="button" id="generate-json-btn">Generate JSON</button>
+            </div>
+        </form>
+
+        <section id="output-area" aria-live="polite"></section>
+    </main>
+
+    <div data-include="Components/footer.html"></div>
+
+    <script src="Scripts/HTMLinclude.min.js"></script>
+    <script src="Scripts/introduction.js"></script>
+    <script src="Scripts/generate_html.js"></script>
+    <script src="Scripts/generate_json.js"></script>
 </body>
 </html>
