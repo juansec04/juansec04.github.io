@@ -4,20 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction Form</title>
-    <style>
-        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5; margin: 0; padding: 0; }
-        main { max-width: 1024px; margin: 1rem auto; padding: 1rem; }
-        form fieldset { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-        form legend { font-weight: 700; padding: 0 .4rem; }
-        form label { display: block; margin-top: .75rem; font-size: .95rem; }
-        form input[type="text"], form input[type="url"], form input[type="date"], form textarea { width: 100%; margin-top: .25rem; padding: .5rem; border: 1px solid #aaa; border-radius: 4px; font-size: 1rem; box-sizing: border-box; }
-        form textarea { min-height: 4rem; resize: vertical; }
-        .compact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; align-items: start; }
-        .button-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
-        button { cursor: pointer; padding: .5rem 1rem; border-radius: 4px; border: 1px solid #555; background: #f2f2f2; }
-        button:hover { background: #e6e6e6; }
-        #output-area { margin-top: 1rem; border: 1px dashed #999; padding: 1rem; }
-    </style>
+    <link rel="stylesheet" href="Styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div data-include="Components/header.html"></div>
@@ -65,9 +53,6 @@
                         <input id="mascot-animal" name="mascotAnimal" type="text" required placeholder="Raven" value="Raven" />
                     </div>
                 </div>
-
-                <label for="mascot-animal">Mascot Animal (required)</label>
-                <input id="mascot-animal" name="mascotAnimal" type="text" required placeholder="Raven" value="Raven" />
 
                 <label for="divider">Divider (required)</label>
                 <input id="divider" name="divider" type="text" required placeholder="~" value="~" />
