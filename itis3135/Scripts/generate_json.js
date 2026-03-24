@@ -52,8 +52,8 @@ if (generateJsonBtn) {
       quote: data.quote,
       quote_author: data.quoteAuthor,
       courses: data.courses,
-      links: data.links.map((href, i) => ({ name: `Link ${i + 1}`, href })),
-    }, null, 2);
+      links: data.links.map((href, i) => ({ name: `Link ${i + 1}`, href }))
+       }, null, 2);
 
     outputArea.innerHTML = `
       <section>
