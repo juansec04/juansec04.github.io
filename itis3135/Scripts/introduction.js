@@ -80,9 +80,9 @@ function gatherIntroData() {
       formData.get('link2').trim(),
       formData.get('link3').trim(),
       formData.get('link4').trim(),
-      formData.get('link5').trim(),
+      formData.get('link5').trim()
     ],
-    courses,
+    courses
   };
 
   return data;
