@@ -49,7 +49,7 @@ function gatherIntroData() {
       department: entry.querySelector('[name="courseDept"]').value.trim(),
       number: entry.querySelector('[name="courseNumber"]').value.trim(),
       name: entry.querySelector('[name="courseName"]').value.trim(),
-      reason: entry.querySelector('[name="courseReason"]').value.trim(),
+      reason: entry.querySelector('[name="courseReason"]').value.trim()
     };
   });
 
