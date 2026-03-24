@@ -129,8 +129,9 @@ nav a:hover {
   padding: 8px;
   margin-top: 4px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 #intro-form textarea {
