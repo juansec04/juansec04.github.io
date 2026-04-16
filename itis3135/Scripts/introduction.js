@@ -1,6 +1,6 @@
-const form = document.getElementById('intro-form');
-const outputArea = document.getElementById('output-area');
-const pageTitle = document.getElementById('page-title');
+const formhtml = document.getElementById('intro-form');
+const outputAreahtml = document.getElementById('output-area');
+const pageTitlehtml = document.getElementById('page-title');
 const pictureInput = document.getElementById('picture');
 const picturePreview = document.getElementById('picture-preview');
 const addCourseBtn = document.getElementById('add-course');
@@ -37,11 +37,40 @@ function createCourseRow(courseData = {}) {
 
 function setInitialCourses() {
   coursesWrapper.innerHTML = '';
-  createCourseRow({ department: 'ITIS', number: '3135', name: 'Web Development', reason: 'Required for class' });
+  createCourseRow({
+    department: 'ITIS',
+    number: '3135',
+    name: 'Web App Design and Development',
+    reason: 'This course teaches practical web development skills essential for modern software development.'
+  });
+  createCourseRow({
+    department: 'ITIS',
+    number: '3200',
+    name: 'Intro to Info Security & Priv',
+    reason: 'Required for my cybersecurity concentration, focusing on information security fundamentals.'
+  });
+  createCourseRow({
+    department: 'MATH',
+    number: '2164',
+    name: 'Matrices & Linear Algebra',
+    reason: 'Required mathematics course for computer science degree, essential for understanding algorithms and graphics.'
+  });
+  createCourseRow({
+    department: 'ITSC',
+    number: '3155',
+    name: 'Software Engineering',
+    reason: 'Provides knowledge of software development processes and best practices for team projects.'
+  });
+  createCourseRow({
+    department: 'ITSC',
+    number: '2600',
+    name: 'Computer Science Program, Identity, Career',
+    reason: 'Helps understand the computer science field and career opportunities available.'
+  });
 }
 
 function gatherIntroData() {
-  const formData = new FormData(form);
+  const formData = new FormData(formhtml);
   const courseElements = coursesWrapper.querySelectorAll('.course-entry');
 
   const courses = Array.from(courseElements).map((entry) => {
@@ -53,7 +82,7 @@ function gatherIntroData() {
     };
   });
 
-  const data = {
+  return {
     firstName: formData.get('firstName').trim(),
     middleName: formData.get('middleName').trim(),
     preferredName: formData.get('preferredName').trim(),
@@ -63,7 +92,9 @@ function gatherIntroData() {
     mascotAdjective: formData.get('mascotAdjective').trim(),
     mascotAnimal: formData.get('mascotAnimal').trim(),
     divider: formData.get('divider').trim(),
-    picture: picturePreview.src,
+    picture: pictureInput.files && pictureInput.files[0]
+      ? picturePreview.src
+      : '../Snowboarding.jpeg',
     pictureCaption: formData.get('pictureCaption').trim(),
     personalStatement: formData.get('personalStatement').trim(),
     personalBackground: formData.get('personalBackground').trim(),
@@ -71,6 +102,7 @@ function gatherIntroData() {
     academicBackground: formData.get('academicBackground').trim(),
     subjectBackground: formData.get('subjectBackground').trim(),
     primaryComputer: formData.get('primaryComputer').trim(),
+    backupComputer: formData.get('backupComputer').trim(),
     funnyThing: formData.get('funnyThing').trim(),
     shareSomething: formData.get('shareSomething').trim(),
     quote: formData.get('quote').trim(),
@@ -84,8 +116,6 @@ function gatherIntroData() {
     ],
     courses
   };
-
-  return data;
 }
 
 function validateIntroData(data) {
@@ -119,48 +149,69 @@ function validateIntroData(data) {
 }
 
 function renderIntroductionHTML(data) {
-  const fullName = [data.firstName, data.middleName, data.preferredName ? `"${data.preferredName}"` : '', data.lastName]
-    .filter(Boolean).join(' ');
+  const fullName = [
+    data.firstName,
+    data.middleName,
+    data.preferredName ? `"${data.preferredName}"` : '',
+    data.lastName
+  ].filter(Boolean).join(' ');
 
-  const courseItems = data.courses.map((c) => `<li><strong>${c.department} ${c.number} ${c.name}:</strong> ${c.reason}</li>`).join('\n');
-  const linkItems = data.links.map((href, i) => `<li><a href="${href}" target="_blank" rel="noopener noreferrer">Link ${i + 1}</a></li>`).join('\n');
+  const courseItems = data.courses
+    .map((c) => `<li>${c.department} ${c.number} - ${c.name}</li>`)
+    .join('\n');
+
+  const linkLabels = ['LinkedIn', 'GitHub', 'GitHub Repo', 'FreeCodeCamp', 'CLT Webpage'];
+
+  const linkItems = data.links
+    .map((href, i) =>
+      `<li><a href="${href}" target="_blank" rel="noopener noreferrer">${linkLabels[i] || href}</a></li>`
+    )
+    .join('\n');
 
   return `
-    <h3>${fullName} ${data.divider} ${data.mascotAdjective} ${data.mascotAnimal}</h3>
+    <h2>Introduction</h2>
     <figure>
-      <img src="${data.picture}" alt="${fullName} image" style="max-width:150px;" />
+      <img src="${data.picture}" alt="${fullName} - Computer Science Student" width="400" height="450">
       <figcaption>${data.pictureCaption}</figcaption>
     </figure>
+    <p class="italic">${data.pictureCaption}</p>
+    <hr>
+    <p>
+        ${data.personalStatement}
+    </p>
     <ul>
-      <li><strong>Personal Statement:</strong> ${data.personalStatement}</li>
-      <li><strong>Personal Background:</strong> ${data.personalBackground}</li>
-      <li><strong>Professional Background:</strong> ${data.professionalBackground}</li>
-      <li><strong>Academic Background:</strong> ${data.academicBackground}</li>
-      <li><strong>Subject Background:</strong> ${data.subjectBackground}</li>
-      <li><strong>Primary Computer:</strong> ${data.primaryComputer}</li>
-      ${data.funnyThing ? `<li><strong>Funny Thing:</strong> ${data.funnyThing}</li>` : ''}
-      ${data.shareSomething ? `<li><strong>Share Something:</strong> ${data.shareSomething}</li>` : ''}
-      <li><strong>Quote:</strong> “${data.quote}” — ${data.quoteAuthor}</li>
-      <li><strong>Acknowledgment:</strong> ${data.ackStatement} (${data.ackDate})</li>
+        <li><strong>Personal Background:</strong> ${data.personalBackground}</li>
+        <li><strong>Professional Background:</strong> ${data.professionalBackground}</li>
+        <li><strong>Academic Background:</strong> ${data.academicBackground}</li>
+        <li><strong>Technical Skills & Experience:</strong> ${data.subjectBackground}</li>
+        <li><strong>Current Setup:</strong> ${data.primaryComputer}</li>
+        <li><strong>Backup Work Computer & Location Plan:</strong> ${data.backupComputer}</li>
+        ${data.funnyThing ? `<li><strong>Funny Thing:</strong> ${data.funnyThing}</li>` : ''}
+        ${data.shareSomething ? `<li><strong>Something I would like to share:</strong> ${data.shareSomething}</li>` : ''}
     </ul>
-    <h4>Courses</h4>
-    <ul>${courseItems}</ul>
-    <h4>Links</h4>
-    <ul>${linkItems}</ul>
+    <h3>Courses I'm taking, & Why:</h3>
+    <ol>${courseItems}</ol>
+    <h3>Personal Motto</h3>
+    <blockquote>
+        <p>"${data.quote}" — <cite>${data.quoteAuthor}</cite></p>
+    </blockquote>
+    <p><strong>Acknowledgment:</strong> ${data.ackStatement} (${data.ackDate})</p>
   `;
 }
 
 function doSubmit() {
   const data = gatherIntroData();
   const validationError = validateIntroData(data);
+
   if (validationError) {
     alert(`Form validation failed: ${validationError}`);
     return;
   }
 
-  pageTitle.textContent = 'Introduction HTML';
-  form.style.display = 'none';
-  outputArea.innerHTML = renderIntroductionHTML(data) + '<p><button id="reset-progress">Reset progress</button></p>';
+  pageTitlehtml.style.display = 'none';
+  document.getElementById('form-instruction').style.display = 'none';
+  formhtml.style.display = 'none';
+  outputAreahtml.innerHTML = renderIntroductionHTML(data) + '<p><button id="reset-progress">Reset progress</button></p>';
 
   document.getElementById('reset-progress').addEventListener('click', () => {
     window.location.reload();
@@ -168,7 +219,7 @@ function doSubmit() {
 }
 
 function escapeHtml(str) {
-  if (!str) { return ''; }
+  if (!str) return '';
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -178,40 +229,60 @@ function escapeHtml(str) {
 }
 
 function clearFormFields() {
-  Array.from(form.querySelectorAll('input, textarea')).forEach((el) => {
+  Array.from(formhtml.querySelectorAll('input, textarea')).forEach((el) => {
     if (el.type === 'file') return;
     if (el.type === 'reset') return;
     if (el.type === 'button') return;
-    if (['submit'].includes(el.type)) return;
+    if (el.type === 'submit') return;
     el.value = '';
   });
-  setInitialCourses();
-  picturePreview.src = 'images/headshot.jpeg';
+
+  coursesWrapper.innerHTML = '';
+  picturePreview.src = '../Snowboarding.jpeg';
+  picturePreview.alt = 'Default headshot';
 }
 
 function loadPicturePreview() {
   const file = pictureInput.files && pictureInput.files[0];
+
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
       picturePreview.src = e.target.result;
+      picturePreview.alt = 'Uploaded preview';
     };
     reader.readAsDataURL(file);
+  } else {
+    picturePreview.src = '../Snowboarding.jpeg';
+    picturePreview.alt = 'Default headshot';
   }
 }
 
 function initialize() {
   setInitialCourses();
 
-  form.addEventListener('submit', function (e) {
+  formhtml.addEventListener('submit', function (e) {
     e.preventDefault();
     doSubmit();
   });
 
+  formhtml.addEventListener('reset', function (e) {
+    // Reset the courses and picture when reset button is clicked
+    setInitialCourses();
+    picturePreview.src = '../Snowboarding.jpeg';
+    picturePreview.alt = 'Default headshot';
+    // Show the form and instruction again
+    pageTitlehtml.style.display = 'block';
+    pageTitlehtml.textContent = 'Introduction Form';
+    document.getElementById('form-instruction').style.display = 'block';
+    formhtml.style.display = 'block';
+    outputAreahtml.innerHTML = '';
+  });
+
   clearBtn.addEventListener('click', clearFormFields);
-
-  addCourseBtn.addEventListener('click', () => createCourseRow({ department: '', number: '', name: '', reason: '' }));
-
+  addCourseBtn.addEventListener('click', () =>
+    createCourseRow({ department: '', number: '', name: '', reason: '' })
+  );
   pictureInput.addEventListener('change', loadPicturePreview);
 }
 
