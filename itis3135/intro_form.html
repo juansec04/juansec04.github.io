@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction Form</title>
     <link rel="stylesheet" href="Styles/default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
     <div data-include="Components/header.html"></div>
@@ -59,7 +61,7 @@
 
                 <label for="picture">Picture (optional file upload, defaults provided)</label>
                 <input id="picture" name="picture" type="file" accept="image/*" />
-                <img id="picture-preview" src="images/headshot.jpeg" alt="Default headshot" style="max-width:100px;display:block;margin:.5em 0;" />
+                <img id="picture-preview" src="../Snowboarding.jpeg" alt="Default headshot" style="max-width:100px;display:block;margin:.5em 0;" />
 
                 <label for="picture-caption">Picture Caption (required)</label>
                 <input id="picture-caption" name="pictureCaption" type="text" required placeholder="My CS profile picture" value="My CS profile picture" />
@@ -85,6 +87,9 @@
                 <label for="primary-computer">Primary Computer</label>
                 <textarea id="primary-computer" name="primaryComputer" required placeholder="MacBook Pro 14" >MacBook Pro 16" with M2 Max, plus gaming PC with Linux dual-boot.</textarea>
 
+                <label for="backup-computer">Backup Work Computer & Location Plan</label>
+                <textarea id="backup-computer" name="backupComputer" placeholder="Windows laptop...">Windows laptop (ASUS ROG Zephyrus M16) primarily used at home or on campus in case of hardware or system issues with my primary device.</textarea>
+
                 <label for="funny-thing">Funny Thing (optional)</label>
                 <textarea id="funny-thing" name="funnyThing" placeholder="I once...">I once renamed all my friend’s machine hosts to mythical creatures for April Fool’s.</textarea>
 
@@ -106,19 +111,19 @@
                 <label for="quote-author">Quote author (required)</label>
                 <input id="quote-author" name="quoteAuthor" type="text" required placeholder="Steve Jobs" value="Steve Jobs" />
 
-                <label for="link1">Link 1 (required)</label>
+                <label for="link1">LinkedIn (required)</label>
                 <input id="link1" name="link1" type="url" required placeholder="https://www.linkedin.com/..." value="https://www.linkedin.com/in/juan-ramirez-982ba7385/" />
 
-                <label for="link2">Link 2 (required)</label>
+                <label for="link2">GitHub (required)</label>
                 <input id="link2" name="link2" type="url" required placeholder="https://github.com/..." value="https://github.com/juansec04" />
 
-                <label for="link3">Link 3 (required)</label>
+                <label for="link3">GitHub Repo (required)</label>
                 <input id="link3" name="link3" type="url" required placeholder="https://github.com/" value="https://github.com/" />
 
-                <label for="link4">Link 4 (required)</label>
+                <label for="link4">FreeCodeCamp (required)</label>
                 <input id="link4" name="link4" type="url" required placeholder="https://..." value="https://www.freecodecamp.org/juansec04" />
 
-                <label for="link5">Link 5 (required)</label>
+                <label for="link5">CLT Webpage (required)</label>
                 <input id="link5" name="link5" type="url" required placeholder="https://webpages.charlotte.edu/jramir62/" value="https://webpages.charlotte.edu/jramir62/" />
             </fieldset>
 
