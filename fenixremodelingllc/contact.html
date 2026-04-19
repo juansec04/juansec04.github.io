@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fenix Remodeling | Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Fenix Remodeling</a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="site-nav">
+        <ul id="nav-list" class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="sub-text">Have questions or want to discuss a project? Send us a message below.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Get in Touch</h2>
+          <p>
+            We would be happy to hear about your remodeling ideas and help you take the next step.
+          </p>
+
+          <div class="contact-info">
+            <p><strong>Business:</strong> Fenix Remodeling</p>
+            <p><strong>Service Area:</strong> Charlotte and surrounding areas</p>
+            <p><strong>Hours:</strong> Monday - Saturday, 8:00 AM - 6:00 PM</p>
+            <p><strong>Email:</strong> info@fenixremodeling.com</p>
+            <p><strong>Phone:</strong> (704) 555-0148</p>
+          </div>
+        </div>
+
+        <div>
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Choose a service</option>
+                <option>Painting</option>
+                <option>Plumbing</option>
+                <option>Carpentry</option>
+                <option>Drywall</option>
+                <option>Flooring</option>
+                <option>Epoxy Floors</option>
+                <option>Bathroom Remodeling</option>
+                <option>Siding</option>
+                <option>Pressure Washing</option>
+                <option>Custom Renovation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+            <p id="form-message" class="form-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section">
+      <div class="container">
+        <h2>Why Contact Us?</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Project Questions</h3>
+            <p>Tell us what kind of remodeling or repair project you are planning.</p>
+          </article>
+
+          <article class="card">
+            <h3>Service Details</h3>
+            <p>Ask about available services, materials, and the type of work you need done.</p>
+          </article>
+
+          <article class="card">
+            <h3>Estimate Requests</h3>
+            <p>Reach out when you are ready to begin planning your next home improvement project.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Fenix Remodeling. All rights reserved.</p>
+      <p>Contact us to start planning your next remodeling project.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
