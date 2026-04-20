@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requirements and Design Document | Fenix Remodeling LLC</title>
+  <link rel="stylesheet" href="Styles/default.css"/>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div data-include="Components/header.html"></div>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1>Requirements and Design Document</h1>
+      <p><strong>Project:</strong> Fenix Remodeling Website</p>
+      <p><strong>Prepared for:</strong> Fenix Remodeling LLC</p>
+      <p><strong>Prepared by:</strong> Juan Ramirez</p>
+      <p><strong>Date:</strong> 04 / 05 / 2026</p>
+    </section>
+
+    <section class="page-section">
+      <h2>Project Overview</h2>
+      <p>
+        This project is a web-based application designed for Fenix Remodeling LLC, a remodeling
+        and home improvement business. The purpose of this website is to promote the company’s
+        services, showcase past projects, and provide an easy way for customers to contact the
+        business. The website will improve the company’s online presence and help attract new clients.
+      </p>
+    </section>
+
+    <section class="page-section">
+      <h2>Intended Users</h2>
+      <p>
+        The intended users of this website are homeowners and individuals in the Charlotte area
+        who are looking for remodeling services such as painting, plumbing, carpentry, and home
+        renovations. Potential clients who want to view previous work or request quotes will also
+        benefit from the website.
+      </p>
+    </section>
+
+    <section class="page-section">
+      <h2>Website Purpose</h2>
+      <p>
+        The website will provide a clean, easy-to-navigate online presence for the company.
+        It will give visitors useful information about the business and encourage customer
+        interaction through clear content and contact options.
+      </p>
+    </section>
+
+    <section class="page-section">
+      <h2>Client Information</h2>
+      <ul>
+        <li><strong>Client Name:</strong> Fenix Remodeling LLC</li>
+        <li><strong>Business Type:</strong> Remodeling &amp; Construction Services</li>
+        <li><strong>Email:</strong> fenixremodelingllc@outlook.com</li>
+        <li><strong>Phone:</strong> (980) 401 – 1279</li>
+      </ul>
+    </section>
+
+    <section class="page-section">
+      <h2>Planned Site Structure</h2>
+
+      <article class="card">
+        <h3>1. Home Page</h3>
+        <p><strong>Purpose:</strong> Introduce the business and provide an overview of services.</p>
+        <p><strong>Audience:</strong> Customers</p>
+        <p><strong>Content:</strong> Business name, short description, featured content, navigation menu</p>
+        <p><strong>User Input:</strong> No</p>
+        <p><strong>Elements:</strong> Buttons, layout sections, navigation</p>
+        <p><strong>Actions:</strong> Navigate to other pages</p>
+        <p><strong>Notes:</strong> Must create a strong first impression</p>
+      </article>
+
+      <article class="card">
+        <h3>2. About Page</h3>
+        <p><strong>Purpose:</strong> Provide information about the company and its background.</p>
+        <p><strong>Audience:</strong> Customers</p>
+        <p><strong>Content:</strong> Company story, mission, experience</p>
+        <p><strong>User Input:</strong> No</p>
+        <p><strong>Elements:</strong> Text-based informational content</p>
+        <p><strong>Actions:</strong> Inform users about the business</p>
+        <p><strong>Notes:</strong> Builds trust with potential clients</p>
+      </article>
+
+      <article class="card">
+        <h3>3. Services Page</h3>
+        <p><strong>Purpose:</strong> Describe all services offered.</p>
+        <p><strong>Audience:</strong> Customers</p>
+        <p><strong>Content:</strong> Painting, Plumbing, Carpentry</p>
+        <p><strong>User Input:</strong> No</p>
+        <p><strong>Elements:</strong> Service sections and links to subpages</p>
+        <p><strong>Actions:</strong> Navigate to specific service categories</p>
+        <p><strong>Notes:</strong> Clear service descriptions are important</p>
+
+        <ul>
+          <li><strong>3.1 Painting Page:</strong> Description and examples of painting services</li>
+          <li><strong>3.2 Plumbing Page:</strong> Description and examples of plumbing services</li>
+          <li><strong>3.3 Carpentry Page:</strong> Description and examples of carpentry services</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>4. Gallery Page</h3>
+        <p><strong>Purpose:</strong> Display previous projects.</p>
+        <p><strong>Audience:</strong> Customers</p>
+        <p><strong>Content:</strong> Project gallery</p>
+        <p><strong>User Input:</strong> No</p>
+        <p><strong>Elements:</strong> Clickable project items</p>
+        <p><strong>Actions:</strong> View project categories and enlarged content</p>
+        <p><strong>Notes:</strong> Important for showcasing quality</p>
+
+        <ul>
+          <li><strong>4.1 Bathrooms:</strong> Bathroom project work</li>
+          <li><strong>4.2 Kitchens:</strong> Kitchen project work</li>
+          <li><strong>4.3 Custom Projects:</strong> Other remodeling work</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>5. Contact Page</h3>
+        <p><strong>Purpose:</strong> Allow users to contact the business.</p>
+        <p><strong>Audience:</strong> Customers</p>
+        <p><strong>Content:</strong> Contact form, phone number, email</p>
+        <p><strong>User Input:</strong> Yes</p>
+        <p><strong>Validation:</strong> Required fields such as name, email, and message</p>
+        <p><strong>Elements:</strong> Form and submit button</p>
+        <p><strong>Actions:</strong> Submit inquiry</p>
+        <p><strong>Notes:</strong> Must be simple and user-friendly</p>
+      </article>
+    </section>
+
+    <section class="page-section">
+      <h2>Dynamic Functionality</h2>
+      <ol>
+        <li>
+          <strong>Contact Form Validation:</strong>
+          Ensures users enter valid information, including proper email format
+          and all required fields.
+        </li>
+        <li>
+          <strong>Image Gallery Interaction:</strong>
+          Allows users to click project items to view them in a larger format.
+        </li>
+        <li>
+          <strong>Navigation Interactivity:</strong>
+          Supports smooth, clickable navigation across all pages.
+        </li>
+        <li>
+          <strong>Optional Service Filter or Selection:</strong>
+          Lets users select and view specific services.
+        </li>
+      </ol>
+    </section>
+  </main>
+<div data-include="Components/footer.html"></div>
+<script src="Scripts/HTMLinclude.min.js"></script>
+</body>
+</html>
