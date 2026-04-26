@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Automatically updates the year in the footer
     const yearSpan = document.getElementById("year");
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
@@ -25,13 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const phone = document.getElementById("phone").value.trim();
             const service = document.getElementById("service").value.trim();
             const message = document.getElementById("message").value.trim();
-
+            
+            // Check if any field is empty
             if (!name || !email || !phone || !service || !message) {
                 formMessage.textContent = "Please fill out all fields before submitting.";
                 formMessage.style.color = "red";
                 return;
             }
 
+            // If all fields are valid, show success message
             formMessage.textContent = "Your request has been submitted successfully.";
             formMessage.style.color = "green";
             contactForm.reset();
