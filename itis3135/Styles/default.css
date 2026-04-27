@@ -191,3 +191,26 @@ nav a:hover {
 .card-title {
     margin-top: 10px;
 }
+
+.slideshow-page {
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+#slideshow-img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slideshow-buttons {
+  margin-top: 1rem;
+}
+
+.slideshow-buttons button {
+  margin: 0.4rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
