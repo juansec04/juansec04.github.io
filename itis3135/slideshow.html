@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat API Slideshow</title>
+  <link rel="stylesheet" href="Styles/default.css" />
+</head>
+<body>
+  <div data-include="Components/header.html"></div> 
+  <main class="slideshow-page">
+    <h1>Cat API Slideshow</h1>
+
+    <img id="slideshow-img" src="" alt="Cat slideshow image" />
+
+    <p id="image-count">Loading images...</p>
+
+    <div class="slideshow-buttons">
+      <button onclick="firstImage()">First</button>
+      <button onclick="previousImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+      <button onclick="lastImage()">End</button>
+      <button onclick="playSlideshow()">Play</button>
+      <button onclick="stopSlideshow()">Stop</button>
+    </div>
+  </main>
+  <div data-include="Components/footer.html"></div>
+  <script src="Scripts/HTMLinclude.min.js"></script>
+  <script src="slideshow.js"></script>
+</body>
+</html>
