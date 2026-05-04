@@ -248,7 +248,7 @@ a {
 /* Cards */
 .card-grid {
     display: grid;
-    gap: 1.5rem;
+    grid-gap: 1.5rem;
 }
 
 .three-columns {
@@ -387,12 +387,17 @@ a {
     .hero-content,
     .split-layout,
     .contact-layout,
-    .three-columns {
+    .three-columns,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
     .hero-image img {
         height: 360px;
+    }
+
+    .project-card img {
+        height: 300px;
     }
 }
 
